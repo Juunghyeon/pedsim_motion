@@ -18,7 +18,7 @@
 ```bash
 cd [workspace]/src
 git clone https://github.com/Juunghyeon/pedsim_motion.git
-cd ./build
+cd pedsim_motion/build
 cmake ..
 make
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:[workspace]/build
