@@ -79,7 +79,7 @@
          tune the vector field used by the ActorPlugin to control the Actor. -->
 
     <actor name="actor1">
-      <pose>0.0 1.0 1.25 0.0 0.0 0.0</pose>
+      <pose>0.0 0.0 1.25 0.0 0.0 0.0</pose>
        <skin>
         <filename>walk.dae</filename>
         <scale>1.0</scale>
@@ -109,6 +109,58 @@
       </animation>
 
       <plugin name="actor1_plugin" filename="libActorPlugin_Walking_Sit.so">
+        <target>0 -5 1.2138</target>
+        <target_weight>1.15</target_weight>
+        <obstacle_weight>1.8</obstacle_weight>
+        <animation_factor>5.1</animation_factor>
+        <!-- Usage: Modify the set of models that the vector field should
+             ignore when moving the actor -->
+        <ignore_obstacles>
+          <model>cafe</model>
+          <model>ground_plane</model>
+        </ignore_obstacles>
+      </plugin>
+    </actor>
+
+    <actor name="actor2">
+      <pose>1.5 1.0 1.25 0.0 0.0 0.0</pose>
+       <skin>
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+
+      <plugin name="actor2_plugin" filename="libActorPlugin_Walking.so">
+        <target>0 -5 1.2138</target>
+        <target_weight>1.15</target_weight>
+        <obstacle_weight>1.8</obstacle_weight>
+        <animation_factor>5.1</animation_factor>
+        <!-- Usage: Modify the set of models that the vector field should
+             ignore when moving the actor -->
+        <ignore_obstacles>
+          <model>cafe</model>
+          <model>ground_plane</model>
+        </ignore_obstacles>
+      </plugin>
+    </actor>
+
+    <actor name="actor3">
+      <pose>1.0 1.0 1.25 0.0 0.0 0.0</pose>
+       <skin>
+        <filename>run.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="running">
+        <filename>run.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+
+      <plugin name="actor3_plugin" filename="libActorPlugin_Running.so">
         <target>0 -5 1.2138</target>
         <target_weight>1.15</target_weight>
         <obstacle_weight>1.8</obstacle_weight>
